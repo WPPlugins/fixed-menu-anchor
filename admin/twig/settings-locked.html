@@ -1,0 +1,129 @@
+<h1>Fixed Menu Header (Version {{ version }})</h1>
+
+{% if false != unlockResponse %}
+    <br>
+    <div class="error" style="padding: 15px;">
+        <strong>Serial key is invalid, please check your serial key!</strong>
+
+        <br/>
+
+        <em>Server responsed: {{unlockResponse.message}}</em>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+{% endif %}
+
+<div class="card" style="max-width: 50%;">
+    That is the backend of fixed-menu-anchor plugin where you can setup all settings.
+</div>
+
+<div class="card" style="max-width: 50%;">
+    <form method="post">
+
+        <h2>Setup viewport values and distances</h2>
+
+        <p>
+            This section allows you to setup a standard distance between an anchor-target and the top menu. That distance
+            avoids that the top menu overlaps anchor-targets.
+        </p>
+
+        <strong>Standard distance:</strong>
+
+        <input type="text"
+            name="fixedMenuAnchor_userdefineddistance"
+            value="{{ userDefinedDistance }}"
+            placeholder="50"
+            style="width: 70px;">
+
+        <br/>
+        <br/>
+
+        <h2>Ignore click event for certain CSS class</h2>
+
+        <p>
+            Anchor CSS-class: Insert your special anchor CSS-class to tell the plugin to ignore clicks. That is helpful in scenarios where you use tabs or accordions, which actually need anchors
+            to navigate. Leave empty, if you dont want to use it.
+        </p>
+
+        <br/>
+
+        <strong>CSS class:</strong>
+
+        <input type="text"
+            name="fixedMenuAnchor_cssClassesToBeIgnored"
+            value="{{ cssClassesToBeIgnored }}"
+            placeholder=""
+            style="width: 100px;">
+
+        <br/>
+        <br/>
+        <br/>
+
+        <input type="hidden" name="fixedMenuAnchor_updateValues" value="true">
+
+        <input class="button button-primary" type="submit" name="name" value="Save all settings">
+    </form>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="card" style="max-width: 50%;">
+    <h2>Limited version running</h2>
+
+    {% if curlEnabled %}
+        <p>
+            Unlock the full functionality of fixed menu anchor: Use an additional distance for the 
+            mobile view if you use a different header height. A license also comes with technical support.
+
+            <br>
+
+            <h4>Procedure</h4>
+            <ol>
+                <li>Step: Get a license from
+                    <a href="https://plugins-first.io/en/product/fixed-menu-anchor-wordpress-plugin/"
+                        target="_blank"><strong>here</strong></a>.
+                </li>
+                <li>
+                    <form method="post">
+                        Step: After the order was paid, you will receive an email with serial key(s). Enter one of it in the following field and click button "Unlock".<br/>
+                        Serial Key:
+                        <input type="text" name="fixedMenuAnchor_unlockCode"
+                            placeholder="Insert serial key you got per email."
+                            style="border: 1px solid #464646; width: 300px;">
+                        <button type="submit" name="button">Unlock</button>
+                    </form>
+                </li>
+            </ol>
+
+            <br>
+
+            In the end, your plugin should be unlocked. If you run into problems, dont hesitate to give us a hint:
+            <a href="mailto:support@plugins-first.io?subject=Issue with fixed-menu-anchor activation">support@plugins-first.io</a>.
+
+            <br/>
+            <br/>
+
+            Your contribution helps us funding our time and further improving this plugin! <strong>Thanks</strong>.
+        </p>
+
+    {% else %}
+
+        <p>Unfortunately, the CURL extension is <strong>not installed or loaded</strong> on your server.
+
+        To get the pro-version, finish the following steps.
+
+        <h4>Steps to unlock</h4>
+        <ol>
+            <li>Step: Get a license from <a href="https://plugins-first.io/en/product/fixed-menu-anchor-wordpress-plugin-pro-version-single/"><strong>here</strong></a>.</li>
+            <li>Step: Write us an email at issue@plugins-first.io and ask for pro-version.
+            <li>Step: You will receive an email from us with pro-version of this plugin.</li>
+        </ol>
+
+    {% endif %}
+</div>

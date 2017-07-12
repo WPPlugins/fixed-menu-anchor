@@ -1,0 +1,105 @@
+<h1>Fixed Menu Header</h1>
+
+{% if freshlyUnlocked %}
+    <div class="updated"
+        style="margin-top: 40px; margin-bottom: 40px; padding-top: 20px; padding-bottom: 20px; width: 70%;">
+        You successfully upgraded the plugin to pro-version. <strong>Thank you!</strong>
+    </div>
+{% endif %}
+
+<div style="width: 70%;">
+    That is the backend of fixed-menu-anchor plugin. Here you can control the jump distance, viewport values and so on.
+</div>
+
+<br/>
+
+You are running version {{ version }} of fixed-menu-anchor plugin.
+
+<br/>
+<br/>
+
+<form method="post">
+
+    <h2>Setup viewport values and distances</h2>
+
+    <div style="width: 70%;">
+        This section allows you to setup a standard distance between an anchor-target and the top menu. That distance
+        avoids that the top menu overlaps anchor-targets. In case your site switch to between a mobile- or desktop-version,
+        you can define a width-border, at which a different distance-value must be used.
+    </div>
+
+    <br/>
+
+    <table>
+        <tr>
+            <td style="text-align: right;"><strong>Until a viewport-width (in pixel) of:</strong></td>
+            <td>
+                <input type="text"
+                    name="fixedMenuAnchor_maximumViewportWidth"
+                    value="{{ maximumViewportWidth }}"
+                    placeholder="769"
+                    style="width: 70px;">
+            </td>
+            <td>
+                <strong>... use the following distance value (in pixel):</strong>
+            </td>
+            <td>
+                <input type="text"
+                    name="fixedMenuAnchor_maximumViewportWidthDistance"
+                    value="{{ maximumViewportWidthDistance }}"
+                    placeholder="50"
+                    style="width: 70px;">
+            </td>
+    </table>
+
+    <br/>
+
+    <strong>If viewport-width (in pixel) is higher use this standard distance:</strong>
+
+    <input type="text"
+        name="fixedMenuAnchor_userdefineddistance"
+        value="{{ userDefinedDistance }}"
+        placeholder="50"
+        style="width: 70px;">
+
+
+    <br/>
+    <br/>
+
+    <h2>Ignore click event for certain CSS class</h2>
+
+    <div style="width: 70%;">
+        Here you can save the name of a certain CSS class, so if one anchor-link is clicked and
+        it has this CSS-class in use, the click event, to move to the anchor target, is ignored.
+        That is helpful in scenario where you use tabs or accordions, which actually need anchors
+        to navigate. Leave empty, if you dont want to use it.
+    </div>
+
+    <br/>
+
+    <strong>CSS class:</strong>
+
+    <input type="text"
+        name="fixedMenuAnchor_cssClassesToBeIgnored"
+        value="{{ cssClassesToBeIgnored }}"
+        placeholder=""
+        style="width: 100px;">
+
+    <br/>
+    <br/>
+    <br/>
+
+    <input type="hidden" name="fixedMenuAnchor_updateValues" value="true">
+
+    <input class="button button-primary" type="submit" name="name" value="Save all settings">
+</form>
+
+<br/>
+<br/>
+
+<h2>Pro version running</h2>
+
+<div style="width: 70%;">
+    Thank you for using the pro version of fixed-menu-anchor plugin. You helped us funding our time and invested
+    in the future of this plugin.
+</div>
